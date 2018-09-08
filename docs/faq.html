@@ -1,0 +1,672 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Frequently Asked Questions &#8212; Stem 1.6.0 documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+</head>
+
+<body>
+    <div class="header"><img class="rightlogo" src="_static/logo.png" alt="Logo" />
+        <h1 class="heading">
+            <a href="index.html">
+                <span>Stem Docs</span></a>
+        </h1>
+        <h2 class="heading"><span>Frequently Asked Questions</span></h2>
+    </div>
+    <div class="topnav">
+
+        <p>
+
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tutorials.html">Tutorials</a>
+                    <ul>
+                        <li><a href="tutorials/the_little_relay_that_could.html">Hello World</a></li>
+                        <li><a href="tutorials/to_russia_with_love.html">Client Usage</a></li>
+                        <li><a href="tutorials/tortoise_and_the_hare.html">Event Listening</a></li>
+                        <li><a href="tutorials/over_the_river.html">Hidden Services</a></li>
+                        <li><a href="tutorials/mirror_mirror_on_the_wall.html">Tor Descriptors</a></li>
+                        <li><a href="tutorials/east_of_the_sun.html">Utilities</a></li>
+                        <li><a href="tutorials/down_the_rabbit_hole.html">Interpreter</a></li>
+                        <li><a href="tutorials/double_double_toil_and_trouble.html">Examples</a></li>
+                    </ul>
+                </li>
+                <li><a href="api.html">API</a>
+                    <ul>
+                        <li><a href="api/control.html">stem.control</a></li>
+                        <li><a href="api/connection.html">stem.connection</a></li>
+                        <li><a href="api/socket.html">stem.socket</a></li>
+                        <li><a href="api/process.html">stem.process</a></li>
+                        <li><a href="api/response.html">stem.response</a></li>
+                        <li><a href="api/exit_policy.html">stem.exit_policy</a></li>
+                        <li><a href="api/version.html">stem.version</a></li>
+                        <li><a href="api.html#descriptors">Descriptors</a></li>
+                        <li><a href="api.html#utilities">Utilities</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://trac.torproject.org/projects/tor/wiki/doc/stem">Development</a>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="change_log.html">Change Log</a></li>
+                        <li><a href="https://trac.torproject.org/projects/tor/wiki/doc/stem/bugs">Bug Tracker</a></li>
+                        <li><a href="https://jenkins.torproject.org/job/stem-tor-ci/">Jenkins</a></li>
+                        <li><a href="download.html">Download</a></li>
+                    </ul>
+                </li>
+                <li><a href="##where-can-i-get-help">Contact</a>
+                    <ul>
+                        <li><a href="https://lists.torproject.org/cgi-bin/mailman/listinfo/tor-dev">Email List</a></li>
+                        <li><a href="https://www.torproject.org/about/contact.html.en#irc">IRC</a></li>
+                        <li><a href="https://www.atagar.com/contact/">Author</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+
+    </div>
+    <div class="content">
+
+        <div class="section" id="frequently-asked-questions">
+            <h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+            <ul class="simple">
+                <li><strong>General Information</strong></li>
+            </ul>
+            <blockquote>
+                <ul class="questions">
+                    <li id="what-is-stem">
+                      <span>What is Stem?</span>
+                      <div class="answer">
+                          <p>Stem is a Python controller library that you can use to interact with <a class="reference external" href="https://www.torproject.org/">Tor</a>. With it you can write scripts and applications with capabilities similar <a class="reference external" href="https://nyx.torproject.org/">Nyx</a>.</p>
+                          <p>From a technical standpoint, Stem is a Python implementation of Tor’s
+                              <a class="reference external" href="https://gitweb.torproject.org/torspec.git/tree/dir-spec.txt">directory</a> and
+                              <a class="reference external" href="https://gitweb.torproject.org/torspec.git/tree/control-spec.txt">control specifications</a>.
+                              To get started see our <a class="reference external" href="tutorials.html">tutorials</a>!</p>
+                      </div>
+                    </li>
+                    <li id="does-stem-have-any-dependencies">
+                      <span>Does Stem have any dependencies?</span>
+                      <div class="answer">
+                          <p><strong>No.</strong> All you need in order to use Stem is Python.</p>
+                          <p>When it is available Stem will use <a class="reference external" href="https://pypi.python.org/pypi/cryptography">cryptography</a> and <a class="reference external" href="https://pypi.python.org/pypi/PyNaCl/">PyNaCl</a> to validate descriptor signatures. However, there is no need to install cryptography unless you need this functionality.
+                          </p>
+                          <p>Note that if cryptography installation fails with…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="n">build</span><span class="o">/</span><span class="n">temp</span><span class="o">.</span><span class="n">linux</span><span class="o">-</span><span class="n">i686</span><span class="o">-</span><span class="mf">2.7</span><span class="o">/</span><span class="n">_openssl</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span> <span class="n">fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">Python</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+          <span class="n">compilation</span> <span class="n">terminated</span><span class="o">.</span>
+          <span class="n">error</span><span class="p">:</span> <span class="n">command</span> <span class="s1">&#39;gcc&#39;</span> <span class="n">failed</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">status</span> <span class="mi">1</span>
+          </pre></div>
+                          </div>
+                          <p>… or…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">package</span> <span class="s1">&#39;libffi&#39;</span> <span class="n">found</span>
+          <span class="n">c</span><span class="o">/</span><span class="n">_cffi_backend</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">17</span><span class="p">:</span> <span class="n">fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">ffi</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+          <span class="n">compilation</span> <span class="n">terminated</span><span class="o">.</span>
+          </pre></div>
+                          </div>
+                          <p>You need the python-dev and libffi-dev packages. For instance on Debian and Ubuntu you can install these with…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span> <span class="n">libffi</span><span class="o">-</span><span class="n">dev</span>
+          <span class="o">%</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">cryptography</span>
+          <span class="o">%</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pynacl</span>
+          </pre></div>
+                          </div>
+                      </div>
+                    </li>
+                    <li id="what-python-versions-is-stem-compatible-with">
+                      <span>What Python versions is Stem compatible with?</span>
+                      <div class="answer">
+                          <p>Stem works with <strong>Python 2.6 and greater</strong>, including the Python 3.x series.</p>
+                      </div>
+                    </li>
+                    <li id="can-i-interact-with-tors-controller-interface-directly">
+                      <span>Can I interact with Tor’s controller interface directly?</span>
+                      <div class="answer">
+                          <p>Yup. You don’t need a library to interact with Tor’s <a class="reference external" href="https://gitweb.torproject.org/torspec.git/tree/control-spec.txt">controller interface</a>, and interacting with it directly is a great way to learn about what it can do. The exact details for how you connect to Tor depend on two things…</p>
+                          <ul class="simple">
+                              <li>Where is Tor listening for controller connections? This is specified by either the <strong>ControlPort</strong> or <strong>ControlSocket</strong> option in your torrc. If you have neither then Tor will not accept controller connections.</li>
+                              <li>What type of authentication is Tor’s controller interface using? This is defined by your <strong>CookieAuthentication</strong> or <strong>HashedControlPassword</strong> option. If you have neither then Tor does not restrict access.</li>
+                          </ul>
+                          <br />
+                          <p>We’ll tackle each of these scenarios one at a time…</p>
+                          <div class="section" id="i-m-using-a-controlport">
+                              <h3><strong>I’m using a ControlPort</strong><a class="headerlink" href="#i-m-using-a-controlport" title="Permalink to this headline">¶</a></h3>
+                              <p>If you are using a <strong>ControlPort</strong> then the easiest method of talking with Tor is via <strong>telnet</strong>. You always need to authenticate after connecting, even if Tor does not restrict access. If your torrc doesn’t have a
+                                  <strong>CookieAuthentication</strong> or <strong>HashedControlPassword</strong> then to authenticate you will simply call <strong>AUTHENTICATE</strong> after connecting without any credentials.</p>
+                              <div class="highlight-default notranslate">
+                                  <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">cat</span> <span class="o">~/.</span><span class="n">tor</span><span class="o">/</span><span class="n">torrc</span>
+          <span class="n">ControlPort</span> <span class="mi">9051</span>
+
+          <span class="o">%</span> <span class="n">telnet</span> <span class="n">localhost</span> <span class="mi">9051</span>
+          <span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
+          <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
+          <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
+          <span class="n">AUTHENTICATE</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">GETINFO</span> <span class="n">version</span>
+          <span class="mi">250</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mf">0.2</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="n">git</span><span class="o">-</span><span class="mi">245</span><span class="n">ecfff36c0cecc</span><span class="p">)</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">QUIT</span>
+          <span class="mi">250</span> <span class="n">closing</span> <span class="n">connection</span>
+          <span class="n">Connection</span> <span class="n">closed</span> <span class="n">by</span> <span class="n">foreign</span> <span class="n">host</span><span class="o">.</span>
+          </pre></div>
+                              </div>
+                          </div>
+                          <div class="section" id="i-m-using-a-controlsocket">
+                              <h3><strong>I’m using a ControlSocket</strong><a class="headerlink" href="#i-m-using-a-controlsocket" title="Permalink to this headline">¶</a></h3>
+                              <p>A <strong>ControlSocket</strong> is a file based socket, so we’ll use <strong>socat</strong> to connect to it…</p>
+                              <div class="highlight-default notranslate">
+                                  <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">cat</span> <span class="o">~/.</span><span class="n">tor</span><span class="o">/</span><span class="n">torrc</span>
+          <span class="n">ControlSocket</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">atagar</span><span class="o">/.</span><span class="n">tor</span><span class="o">/</span><span class="n">socket</span>
+
+          <span class="o">%</span> <span class="n">socat</span> <span class="n">UNIX</span><span class="o">-</span><span class="n">CONNECT</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">atagar</span><span class="o">/.</span><span class="n">tor</span><span class="o">/</span><span class="n">socket</span> <span class="n">STDIN</span>
+          <span class="n">AUTHENTICATE</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">GETINFO</span> <span class="n">version</span>
+          <span class="mi">250</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mf">0.2</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="n">git</span><span class="o">-</span><span class="mi">245</span><span class="n">ecfff36c0cecc</span><span class="p">)</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">QUIT</span>
+          <span class="mi">250</span> <span class="n">closing</span> <span class="n">connection</span>
+          </pre></div>
+                              </div>
+                          </div>
+                          <div class="section" id="i-m-using-cookie-authentication">
+                              <h3><strong>I’m using cookie authentication</strong><a class="headerlink" href="#i-m-using-cookie-authentication" title="Permalink to this headline">¶</a></h3>
+                              <p>Cookie authentication simply means that your credential is the content of a file in Tor’s <strong>DataDirectory</strong>. You can learn information about Tor’s method of authentication (including the cookie file’s location) by calling
+                                  <strong>PROTOCOLINFO</strong>…</p>
+                              <div class="highlight-default notranslate">
+                                  <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">cat</span> <span class="o">~/.</span><span class="n">tor</span><span class="o">/</span><span class="n">torrc</span>
+          <span class="n">ControlPort</span> <span class="mi">9051</span>
+          <span class="n">CookieAuthentication</span> <span class="mi">1</span>
+
+          <span class="o">%</span> <span class="n">telnet</span> <span class="n">localhost</span> <span class="mi">9051</span>
+          <span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
+          <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
+          <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
+          <span class="n">PROTOCOLINFO</span>
+          <span class="mi">250</span><span class="o">-</span><span class="n">PROTOCOLINFO</span> <span class="mi">1</span>
+          <span class="mi">250</span><span class="o">-</span><span class="n">AUTH</span> <span class="n">METHODS</span><span class="o">=</span><span class="n">COOKIE</span><span class="p">,</span><span class="n">SAFECOOKIE</span> <span class="n">COOKIEFILE</span><span class="o">=</span><span class="s2">&quot;/home/atagar/.tor/control_auth_cookie&quot;</span>
+          <span class="mi">250</span><span class="o">-</span><span class="n">VERSION</span> <span class="n">Tor</span><span class="o">=</span><span class="s2">&quot;0.2.5.1-alpha-dev&quot;</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          </pre></div>
+                              </div>
+                              <p>Cookie authentication has two flavors: <strong>COOKIE</strong> and <strong>SAFECOOKIE</strong>. Below we’ll show you how to authenticate via COOKIE. SAFECOOKIE authentication is a lot more involved, and not something you will want to do by hand (though Stem supports it transparently).</p>
+                              <p>To get the credential for your AUTHENTICATE command we will use <strong>hexdump</strong>…</p>
+                              <div class="highlight-default notranslate">
+                                  <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">hexdump</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;32/1 &quot;</span><span class="si">%02x</span><span class="s1">&quot;&quot;</span><span class="se">\n</span><span class="s1">&quot;&#39;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">atagar</span><span class="o">/.</span><span class="n">tor</span><span class="o">/</span><span class="n">control_auth_cookie</span>
+          <span class="n">be9c9e18364e33d5eb8ba820d456aa2bc03444c0420f089ba4569b6aeecc6254</span>
+
+          <span class="o">%</span> <span class="n">telnet</span> <span class="n">localhost</span> <span class="mi">9051</span>
+          <span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
+          <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
+          <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
+          <span class="n">AUTHENTICATE</span> <span class="n">be9c9e18364e33d5eb8ba820d456aa2bc03444c0420f089ba4569b6aeecc6254</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">GETINFO</span> <span class="n">version</span>
+          <span class="mi">250</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mf">0.2</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="n">git</span><span class="o">-</span><span class="mi">245</span><span class="n">ecfff36c0cecc</span><span class="p">)</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">QUIT</span>
+          <span class="mi">250</span> <span class="n">closing</span> <span class="n">connection</span>
+          <span class="n">Connection</span> <span class="n">closed</span> <span class="n">by</span> <span class="n">foreign</span> <span class="n">host</span><span class="o">.</span>
+          </pre></div>
+                              </div>
+                          </div>
+                          <div class="section" id="i-m-using-password-authentication">
+                              <h3><strong>I’m using password authentication</strong><a class="headerlink" href="#i-m-using-password-authentication" title="Permalink to this headline">¶</a></h3>
+                              <p>Tor’s other method of authentication is a credential you know. To use it ask Tor to hash your password, then use that in your torrc…</p>
+                              <div class="highlight-default notranslate">
+                                  <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">tor</span> <span class="o">--</span><span class="nb">hash</span><span class="o">-</span><span class="n">password</span> <span class="s2">&quot;my_password&quot;</span>
+          <span class="mi">16</span><span class="p">:</span><span class="n">E600ADC1B52C80BB6022A0E999A7734571A451EB6AE50FED489B72E3DF</span>
+          </pre></div>
+                              </div>
+                              <p>Authenticating with this simply involves giving Tor the credential…</p>
+                              <div class="highlight-default notranslate">
+                                  <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">cat</span> <span class="o">~/.</span><span class="n">tor</span><span class="o">/</span><span class="n">torrc</span>
+          <span class="n">ControlPort</span> <span class="mi">9051</span>
+          <span class="n">HashedControlPassword</span> <span class="mi">16</span><span class="p">:</span><span class="n">E600ADC1B52C80BB6022A0E999A7734571A451EB6AE50FED489B72E3DF</span>
+
+          <span class="o">%</span> <span class="n">telnet</span> <span class="n">localhost</span> <span class="mi">9051</span>
+          <span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
+          <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
+          <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
+          <span class="n">AUTHENTICATE</span> <span class="s2">&quot;my_password&quot;</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">GETINFO</span> <span class="n">version</span>
+          <span class="mi">250</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mf">0.2</span><span class="o">.</span><span class="mf">5.1</span><span class="o">-</span><span class="n">alpha</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="n">git</span><span class="o">-</span><span class="mi">245</span><span class="n">ecfff36c0cecc</span><span class="p">)</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">QUIT</span>
+          <span class="mi">250</span> <span class="n">closing</span> <span class="n">connection</span>
+          <span class="n">Connection</span> <span class="n">closed</span> <span class="n">by</span> <span class="n">foreign</span> <span class="n">host</span><span class="o">.</span>
+          </pre></div>
+                              </div>
+                          </div>
+                          <br /><br /><br /><br /><br /><br /><br />
+                      </div>
+                    </li>
+                    <li id="are-there-any-other-controller-libraries">
+                      <span>Are there any other controller libraries?</span>
+                      <div class="answer">
+                          <p>Yup. The most mature controller libraries are written in Python, but there’s a few options in other languages as well. By far the most mature alternative to Stem are <a class="reference external" href="https://txtorcon.readthedocs.org/">Txtorcon</a> and <a class="reference external" href="https://gitweb.torproject.org/pytorctl.git">TorCtl</a>.</p>
+                          <p><a class="reference external" href="https://txtorcon.readthedocs.org/">Txtorcon</a> is an actively maintained controller library written by Meejah for <a class="reference external" href="https://twistedmatrix.com/trac/">Twisted</a>.</p>
+                          <p><a class="reference external" href="https://gitweb.torproject.org/pytorctl.git">TorCtl</a> was Stem’s predecessor and <a class="reference external" href="https://blog.torproject.org/blog/torctl-deprecation-and-stem-plans">deprecated in December 2012</a> in favor of Stem. Though no longer actively developed, it’s still quite functional and still used for several <a class="reference external" href="https://gitweb.torproject.org/torflow.git">TorFlow</a> based projects.</p>
+                          <p>For PHP <a class="reference external" href="https://github.com/dapphp/TorUtils">TorUtils</a> supports a wide range of controller functionality. For examples of its usage see <a class="reference external" href="https://drew-phillips.com/tor-nodes/">Drew’s tor-nodes</a> and <a class="reference external" href="https://openinternet.io/">Open Internet</a>.</p>
+                          <p>The following are the functional controller libraries I’m aware of. Dates are for highly active development. If I missed one then please <a class="reference external" href="https://www.atagar.com/contact/">let me know</a>!</p>
+                          <table border="1" class="docutils">
+                              <colgroup>
+                                  <col width="62%" />
+                                  <col width="15%" />
+                                  <col width="23%" />
+                              </colgroup>
+                              <thead valign="bottom">
+                                  <tr class="row-odd">
+                                      <th class="head">Library</th>
+                                      <th class="head">Language</th>
+                                      <th class="head">Developed</th>
+                                  </tr>
+                              </thead>
+                              <tbody valign="top">
+                                  <tr class="row-even">
+                                      <td><a class="reference external" href="https://stem.torproject.org/">Stem</a></td>
+                                      <td>Python</td>
+                                      <td>October 2011 - Present</td>
+                                  </tr>
+                                  <tr class="row-odd">
+                                      <td><a class="reference external" href="https://txtorcon.readthedocs.org/">Txtorcon</a></td>
+                                      <td>Python (Twisted)</td>
+                                      <td>February 2012 - Present</td>
+                                  </tr>
+                                  <tr class="row-even">
+                                      <td><a class="reference external" href="https://gitweb.torproject.org/pytorctl.git">TorCtl</a></td>
+                                      <td>Python</td>
+                                      <td>July 2008 - November 2011</td>
+                                  </tr>
+                                  <tr class="row-odd">
+                                      <td><a class="reference external" href="https://github.com/dapphp/TorUtils">TorUtils</a></td>
+                                      <td>PHP</td>
+                                      <td>October 2015 - Present</td>
+                                  </tr>
+                                  <tr class="row-even">
+                                      <td><a class="reference external" href="https://gitlab.com/amphetamine/puccinia/">Puccinia</a></td>
+                                      <td>Rust</td>
+                                      <td>October 2015 - July 2017</td>
+                                  </tr>
+                                  <tr class="row-odd">
+                                      <td><a class="reference external" href="https://github.com/dunglas/php-torcontrol/">PHP TorCtl</a></td>
+                                      <td>PHP</td>
+                                      <td>February 2013</td>
+                                  </tr>
+                                  <tr class="row-even">
+                                      <td><a class="reference external" href="https://gitweb.torproject.org/jtorctl.git">JTorCtl</a></td>
+                                      <td>Java</td>
+                                      <td>June 2005 - May 2009</td>
+                                  </tr>
+                                  <tr class="row-odd">
+                                      <td><a class="reference external" href="https://github.com/cretz/bine">Bine</a></td>
+                                      <td>Go</td>
+                                      <td>May 2018</td>
+                                  </tr>
+                                  <tr class="row-even">
+                                      <td><a class="reference external" href="https://github.com/sycamoreone/orc">Orc</a></td>
+                                      <td>Go</td>
+                                      <td>January 2015</td>
+                                  </tr>
+                                  <tr class="row-odd">
+                                      <td><a class="reference external" href="https://github.com/Yawning/bulb">Bulb</a></td>
+                                      <td>Go</td>
+                                      <td>March 2015</td>
+                                  </tr>
+                                  <tr class="row-even">
+                                      <td><a class="reference external" href="https://github.com/Dhole/rust-tor-controller">Rust Controller</a></td>
+                                      <td>Rust</td>
+                                      <td>May 2016</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                    </li>
+                    <li id="what-license-is-stem-under">
+                      <span>What license is Stem under?</span>
+                      <div class="answer">
+                          <p>Stem is under the <a class="reference external" href="https://www.gnu.org/licenses/lgpl">LGPLv3</a>.</p>
+                      </div>
+                    </li>
+                    <li id="where-can-i-get-help">
+                      <span>Where can I get help?</span>
+                      <div class="answer">
+                          <p>Do you have a Tor related question or project that you would like to discuss? If so then find us on the <a class="reference external" href="https://lists.torproject.org/cgi-bin/mailman/listinfo/tor-dev">tor-dev&#64; email list</a> and <a class="reference external" href="https://www.torproject.org/about/contact.html.en#irc">IRC</a>.</p>
+                      </div>
+                    </li>
+                </ul>
+            </blockquote>
+            <ul class="simple">
+                <li><strong>Usage</strong></li>
+            </ul>
+            <blockquote>
+                <ul class="questions">
+                    <li id="how-do-i-connect-to-tor">
+                      <span>How do I connect to Tor?</span>
+                      <div class="answer">
+                          <p>Once you have Tor running and <a class="reference external" href="tutorials/the_little_relay_that_could.html">properly configured</a> you have a few ways of connecting to it. The following are the most common methods for getting a <a class="reference internal" href="api/control.html#stem.control.Controller" title="stem.control.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">Controller</span></code></a> instance, from the highest to lowest level…</p>
+                          <ol class="arabic">
+                              <li>
+                                  <p class="first"><a class="reference external" href="api/connection.html">Connection Module</a></p>
+                                  <p>Writing a commandline script? Then the <a class="reference internal" href="api/connection.html#stem.connection.connect" title="stem.connection.connect"><code class="xref py py-func docutils literal notranslate"><span class="pre">connect()</span></code></a> function provide you the quickest and most hassle free method for getting a
+                                      <a class="reference internal" href="api/control.html#stem.control.Controller" title="stem.control.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">Controller</span></code></a>.</p>
+                                  <p>This function connects and authenticates to the given port or socket, providing you a one-line method of getting a
+                                      <a class="reference internal" href="api/control.html#stem.control.Controller" title="stem.control.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">Controller</span></code></a> that’s ready to use. If Tor requires a password then the user will be prompted for it. When the connection cannot be established this prints a description of the problem to stdout and returns <strong>None</strong>.</p>
+                              </li>
+                              <li>
+                                  <p class="first"><a class="reference external" href="api/control.html">Control Module</a></p>
+                                  <p>The connection module helpers above are all well and good when you need a quick-and-dirty connection for your commandline script, but they’re inflexible. In particular their lack of exceptions and direct use of stdin/stdout make them undesirable for more complicated situations. That’s where the Controller’s <a class="reference internal" href="api/control.html#stem.control.Controller.from_port" title="stem.control.Controller.from_port"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_port()</span></code></a> and
+                                      <a class="reference internal" href="api/control.html#stem.control.Controller.from_socket_file" title="stem.control.Controller.from_socket_file"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_socket_file()</span></code></a> methods come in.</p>
+                                  <p>These provide the most flexible method of connecting to Tor, and for sophisticated applications is what you’ll want.</p>
+                              </li>
+                              <li>
+                                  <p class="first"><a class="reference external" href="api/socket.html">Socket Module</a></p>
+                                  <p>For the diehards among us you can skip the conveniences of a high level
+                                      <a class="reference internal" href="api/control.html#stem.control.Controller" title="stem.control.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">Controller</span></code></a> and work directly with the raw components. At Stem’s lowest level your connection with Tor is a
+                                      <a class="reference internal" href="api/socket.html#stem.socket.ControlSocket" title="stem.socket.ControlSocket"><code class="xref py py-class docutils literal notranslate"><span class="pre">ControlSocket</span></code></a> subclass. This provides methods to send, receive, disconnect, and reconnect to Tor.</p>
+                              </li>
+                          </ol>
+                      </div>
+                    </li>
+                    <li id="how-do-i-request-a-new-identity-from-tor">
+                      <span>How do I request a new identity from Tor?</span>
+                      <div class="answer">
+                          <p>In Tor your identity is the three-hop <strong>circuit</strong> over which your traffic travels through the Tor network.</p>
+                          <p>Tor periodically creates new circuits. When a circuit is used it becomes <strong>dirty</strong>, and after ten minutes new connections will not use it. When all of the connections using an expired circuit are done the circuit is closed.</p>
+                          <p>An important thing to note is that a new circuit does not necessarily mean a new IP address. Paths are randomly selected based on heuristics like speed and stability. There are only so many large exits in the Tor network, so it’s not uncommon to reuse an exit you have had previously.</p>
+                          <p>Tor does not have a method for cycling your IP address. This is on purpose, and done for a couple reasons. The first is that this capability is usually requested for not-so-nice reasons such as ban evasion or SEO. Second, repeated circuit creation puts a very high load on the Tor network, so please don’t!</p>
+                          <p>With all that out of the way, how do you create a new circuit? You can customize the rate at which Tor cycles circuits with the <strong>MaxCircuitDirtiness</strong> option in your <a class="reference external" href="https://www.torproject.org/docs/faq.html.en#torrc">torrc</a>. <a class="reference external" href="https://en.wikipedia.org/wiki/Vidalia_%28software%29">Vidalia</a> and <a class="reference external" href="https://nyx.torproject.org/">Nyx</a> both provide a method to request a new identity, and you can do so programmatically by sending Tor a NEWNYM signal.</p>
+                          <p>To do this with telnet…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">telnet</span> <span class="n">localhost</span> <span class="mi">9051</span>
+          <span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
+          <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
+          <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
+          <span class="n">AUTHENTICATE</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          <span class="n">SIGNAL</span> <span class="n">NEWNYM</span>
+          <span class="mi">250</span> <span class="n">OK</span>
+          </pre></div>
+                          </div>
+                          <p>And with Stem…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">stem</span> <span class="k">import</span> <span class="n">Signal</span>
+          <span class="kn">from</span> <span class="nn">stem.control</span> <span class="k">import</span> <span class="n">Controller</span>
+
+          <span class="k">with</span> <span class="n">Controller</span><span class="o">.</span><span class="n">from_port</span><span class="p">(</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9051</span><span class="p">)</span> <span class="k">as</span> <span class="n">controller</span><span class="p">:</span>
+            <span class="n">controller</span><span class="o">.</span><span class="n">authenticate</span><span class="p">()</span>
+            <span class="n">controller</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">Signal</span><span class="o">.</span><span class="n">NEWNYM</span><span class="p">)</span>
+          </pre></div>
+                          </div>
+                      </div>
+                    </li>
+                    <li id="how-do-i-reload-my-torrc">
+                      <span>How do I reload my torrc?</span>
+                      <div class="answer">
+                          <p>Tor is configured through its <a class="reference external" href="https://www.torproject.org/docs/faq.html.en#torrc">torrc</a>. When you edit this file you need to either restart Tor or issue a <strong>HUP</strong> for the changes to be reflected. To issue a HUP you can either…</p>
+                          <blockquote>
+                              <div>
+                                  <ul class="simple">
+                                      <li>Run <strong>pkill -sighup tor</strong>.</li>
+                                      <li>Send Tor a <strong>HUP</strong> signal through its control port…</li>
+                                  </ul>
+                              </div>
+                          </blockquote>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">stem</span> <span class="k">import</span> <span class="n">Signal</span>
+          <span class="kn">from</span> <span class="nn">stem.control</span> <span class="k">import</span> <span class="n">Controller</span>
+
+          <span class="k">with</span> <span class="n">Controller</span><span class="o">.</span><span class="n">from_port</span><span class="p">(</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9051</span><span class="p">)</span> <span class="k">as</span> <span class="n">controller</span><span class="p">:</span>
+            <span class="n">controller</span><span class="o">.</span><span class="n">authenticate</span><span class="p">()</span>
+            <span class="n">controller</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">Signal</span><span class="o">.</span><span class="n">HUP</span><span class="p">)</span>
+          </pre></div>
+                          </div>
+                      </div>
+                    </li>
+                    <li id="how-do-i-read-tar-xz-descriptor-archives">
+                      <span>How do I read *.tar.xz descriptor archives?</span>
+                      <div class="answer">
+                          <span id="id17"></span>
+                          <p>Stem’s <a class="reference internal" href="api/descriptor/descriptor.html#stem.descriptor.__init__.parse_file" title="stem.descriptor.__init__.parse_file"><code class="xref py py-func docutils literal notranslate"><span class="pre">parse_file()</span></code></a> and
+                              <a class="reference internal" href="api/descriptor/reader.html#stem.descriptor.reader.DescriptorReader" title="stem.descriptor.reader.DescriptorReader"><code class="xref py py-class docutils literal notranslate"><span class="pre">DescriptorReader</span></code></a> can read plaintext descriptors and tarballs. However, <a class="reference external" href="https://lists.torproject.org/pipermail/tor-dev/2014-May/006884.html">metrics uses *.xz
+          compression</a>. Python 3.3 adds builtin xz support, but if you’re using an earlier version of python you will need to decompress the archives yourself.</p>
+                          <p>With modern versions of tar you can simply decompress archives via <strong>tar xf
+          archive.tar.xz</strong>, or programmatically using <a class="reference external" href="https://pypi.python.org/pypi/pyliblzma">lzma</a>.</p>
+                      </div>
+                    </li>
+                    <li id="what-is-that-with-keyword-i-keep-seeing-in-the-tutorials">
+                      <span>What is that ‘with’ keyword I keep seeing in the tutorials?</span>
+                      <div class="answer">
+                          <p>Python’s <a class="reference external" href="http://effbot.org/zone/python-with-statement.htm">with</a> keyword is shorthand for a try/finally block. With a <a class="reference internal" href="api/control.html#stem.control.Controller" title="stem.control.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">Controller</span></code></a> the following…</p>
+                          <div class="highlight-python notranslate">
+                              <div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Controller</span><span class="o">.</span><span class="n">from_port</span><span class="p">(</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9051</span><span class="p">)</span> <span class="k">as</span> <span class="n">controller</span><span class="p">:</span>
+            <span class="c1"># do my stuff</span>
+          </pre></div>
+                          </div>
+                          <p>… is equivalent to…</p>
+                          <div class="highlight-python notranslate">
+                              <div class="highlight"><pre><span></span><span class="n">controller</span> <span class="o">=</span> <span class="n">Controller</span><span class="o">.</span><span class="n">from_port</span><span class="p">(</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9051</span><span class="p">)</span>
+
+          <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># do my stuff</span>
+          <span class="k">finally</span><span class="p">:</span>
+            <span class="n">controller</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+          </pre></div>
+                          </div>
+                          <p>This helps to make sure that regardless of if your code raises an exception or not the control connection will be cleaned up afterward. Note that this means that if you leave the ‘with’ scope your <a class="reference internal" href="api/control.html#stem.control.Controller" title="stem.control.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">Controller</span></code></a> will be closed. The following for instance is a bug common when first learning Stem…
+                          </p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BandwidthReporter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+            <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controller</span><span class="p">):</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">controller</span> <span class="o">=</span> <span class="n">controller</span>
+
+            <span class="k">def</span> <span class="nf">print_bandwidth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <span class="n">bytes_read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="s2">&quot;traffic/read&quot;</span><span class="p">)</span>
+              <span class="n">bytes_written</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="s2">&quot;traffic/written&quot;</span><span class="p">)</span>
+
+              <span class="nb">print</span> <span class="s2">&quot;My Tor relay has read </span><span class="si">%s</span><span class="s2"> bytes and written </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bytes_read</span><span class="p">,</span> <span class="n">bytes_written</span><span class="p">)</span>
+
+          <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">Controller</span><span class="o">.</span><span class="n">from_port</span><span class="p">(</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9051</span><span class="p">)</span> <span class="k">as</span> <span class="n">controller</span><span class="p">:</span>
+              <span class="n">reporter</span> <span class="o">=</span> <span class="n">BandwidthReporter</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+
+            <span class="c1"># The following line is broken because the &#39;controller&#39; we initialised</span>
+            <span class="c1"># above was disconnected once we left the &#39;with&#39; scope. To fix this the</span>
+            <span class="c1"># print_bandwidth() call should be in the &#39;with&#39; block.</span>
+
+            <span class="n">reporter</span><span class="o">.</span><span class="n">print_bandwidth</span><span class="p">()</span>
+          </pre></div>
+                          </div>
+                      </div>
+                    </li>
+                </ul>
+            </blockquote>
+            <ul class="simple">
+                <li><strong>Development</strong></li>
+            </ul>
+            <blockquote>
+                <ul class="questions">
+                    <li id="how-do-i-get-started">
+                      <span>How do I get started?</span>
+                      <div class="answer">
+                          <p>The best way of getting involved with any project is to jump right in! Our <a class="reference external" href="https://trac.torproject.org/projects/tor/wiki/doc/stem/bugs">bug
+          tracker</a> lists several development tasks. In particular look for the ‘easy’ keyword when getting started. If you have any questions then I’m always more than happy to help! I’m <strong>atagar</strong> on <a class="reference external" href="http://www.oftc.net/">oftc</a> and also available
+                              <a class="reference external" href="https://www.atagar.com/contact/">via email</a>.</p>
+                          <p>To start hacking on Stem please do the following and don’t hesitate to let me know if you get stuck or would like to discuss anything!</p>
+                          <ol class="arabic simple">
+                              <li>Clone our <a class="reference external" href="http://git-scm.com/">git</a> repository: <strong>git clone https://git.torproject.org/stem.git</strong></li>
+                              <li>Get our test dependencies: <strong>sudo pip install mock pycodestyle pyflakes</strong>.</li>
+                              <li>Find a <a class="reference external" href="https://trac.torproject.org/projects/tor/wiki/doc/stem/bugs">bug or feature</a> that sounds interesting.</li>
+                              <li>When you have something that you would like to contribute back do the following…</li>
+                          </ol>
+                          <blockquote>
+                              <div>
+                                  <ul class="simple">
+                                      <li>If you don’t already have a publicly accessible Stem repository then set one up. <a class="reference external" href="https://github.com/">GitHub</a> in particular is great for this.</li>
+                                      <li>File a <a class="reference external" href="https://trac.torproject.org/projects/tor/newticket">trac ticket</a>, the only fields you’ll need are…</li>
+                                  </ul>
+                                  <blockquote>
+                                      <div>
+                                          <ul class="simple">
+                                              <li>Summary: short description of your change</li>
+                                              <li>Description: longer description and a link to your repository with either the git commits or branch that has your change</li>
+                                              <li>Type: ‘defect’ if this is a bug fix and ‘enhancement’ otherwise</li>
+                                              <li>Priority: rough guess at the priority of your change</li>
+                                              <li>Component: Core Tor / Stem</li>
+                                          </ul>
+                                      </div>
+                                  </blockquote>
+                                  <ul class="simple">
+                                      <li>I’ll review the change and give suggestions. When we’re both happy with it I’ll push your change to the official repository.</li>
+                                  </ul>
+                              </div>
+                          </blockquote>
+                      </div>
+                    </li>
+                    <li id="how-do-i-run-the-tests">
+                      <span>How do I run the tests?</span>
+                      <div class="answer">
+                          <p>Stem has three kinds of tests: <strong>unit</strong>, <strong>integration</strong>, and <strong>static</strong>.</p>
+                          <p><strong>Unit</strong> tests are our most frequently ran tests. They’re quick, they’re easy, and provide good test coverage…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span>~$ cd stem/
+          ~/stem$ ./run_tests.py --unit
+          </pre></div>
+                          </div>
+                          <p><strong>Integration</strong> tests start a live Tor instance and test against that. This not only provides additional test coverage, but lets us check our continued interoperability with new releases of Tor. Running these require that you have
+                              <a class="reference external" href="https://www.torproject.org/download/download.html.en">Tor installed</a>. You can exercise alternate Tor configurations with the <code class="docutils literal notranslate"><span class="pre">--target</span></code> argument (see
+                              <code class="docutils literal notranslate"><span class="pre">run_tests.py</span> <span class="pre">--help</span></code> for a list of its options).</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span>~/stem$ ./run_tests.py --integ
+          ~/stem$ ./run_tests.py --integ --tor /path/to/tor
+          ~/stem$ ./run_tests.py --integ --target RUN_COOKIE
+          </pre></div>
+                          </div>
+                          <p><strong>Static</strong> tests use <a class="reference external" href="https://launchpad.net/pyflakes">pyflakes</a> to do static error checking and <a class="reference external" href="http://pycodestyle.readthedocs.org/en/latest/">pycodestyle</a> for style checking. If you have them installed then they automatically take place as part of all test runs.
+                          </p>
+                          <p>See <code class="docutils literal notranslate"><span class="pre">run_tests.py</span> <span class="pre">--help</span></code> for more usage information.</p>
+                      </div>
+                    </li>
+                    <li id="how-do-i-test-compatibility-with-multiple-python-versions">
+                      <span>How can I test compatibility with multiple python versions?</span>
+                      <div class="answer">
+                          <p>Stem supports python versions 2.6 and above, including the 3.x series. You can test all versions of python you currently have installed on your system with
+                              <a class="reference external" href="https://testrun.org/tox/">tox</a>. If you’re using a Debian based system this can be as simple as…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span>~/stem$ sudo apt-get install python-tox python2.7 python3.3 python-dev python3-dev
+          ~/stem$ tox
+          ...
+          ____ summary _____
+          SKIPPED:  py26: InterpreterNotFound: python2.6
+            py27: commands succeeded
+          SKIPPED:  py32: InterpreterNotFound: python3.2
+            py33: commands succeeded
+          SKIPPED:  py34: InterpreterNotFound: python3.4
+          SKIPPED:  py35: InterpreterNotFound: python3.5
+          SKIPPED:  py36: InterpreterNotFound: python3.6
+          SKIPPED:  py37: InterpreterNotFound: python3.7
+          SKIPPED:  jython: InterpreterNotFound: jython
+          SKIPPED:  pypy: InterpreterNotFound: pypy
+            congratulations :)
+          </pre></div>
+                          </div>
+                          <p>Tox fetches Stem’s dependencies for each version of python. One of these dependencies is pycrypto which requires <strong>python-dev</strong> (or <strong>python3-dev</strong> if testing with python3).</p>
+                          <p>Tox also allows you to customize the underlying commands and environments. For example…
+                          </p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span># run the tests with just python 2.6
+          ~/stem$ tox -e py26
+
+          # pass arguments to &#39;run_tests.py&#39;
+          ~/stem$ tox -e py26 -- -u --test response.events
+          </pre></div>
+                          </div>
+                      </div>
+                    </li>
+                    <li id="how-do-i-build-the-site">
+                      <span>How do I build the site?</span>
+                      <div class="answer">
+                          <p>If you have <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> version 1.1 or later installed then building our site is as easy as…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span>~$ cd stem/docs
+          ~/stem/docs$ make html
+          </pre></div>
+                          </div>
+                          <p>When it’s finished you can direct your browser to the <em>_build</em> directory with a URI similar to…</p>
+                          <div class="highlight-default notranslate">
+                              <div class="highlight"><pre><span></span><span class="n">file</span><span class="p">:</span><span class="o">///</span><span class="n">home</span><span class="o">/</span><span class="n">atagar</span><span class="o">/</span><span class="n">stem</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+          </pre></div>
+                          </div>
+                      </div>
+                    </li>
+                    <li id="what-is-the-copyright-for-patches">
+                      <span>What is the copyright for patches?</span>
+                      <div class="answer">
+                          <p>Stem is under the LGPLv3 which is a fine license, but poses a bit of a problem for sharing code with our other projects (which are mostly BSD). To share code without needing to hunt down prior contributors we need Tor to have the copyright for the whole Stem codebase. Presently the copyright of Stem is jointly held by its main author (<a class="reference external" href="https://www.atagar.com/">Damian</a>) and the
+                              <a class="reference external" href="https://www.torproject.org/">Tor Project</a>.</p>
+                          <p>If you submit a substantial patch I’ll ask if you’re fine with it being in the public domain. This would mean that there are no legal restrictions for using your contribution, and hence won’t pose a problem if we reuse Stem code in other projects.</p>
+                      </div>
+                    </li>
+                </ul>
+            </blockquote>
+        </div>
+
+    </div>
+    <div class="bottomnav">
+    </div>
+
+    <div class="footer" role="contentinfo">
+    </div>
+
+    <script type="text/javascript">
+
+    // show/hide for FAQ questions
+    var toggleFaq = function(answer) {
+      if (answer.is('.open')) {
+        answer.animate({'height': '0'}, 100);
+        answer.removeClass('open');
+      } else {
+        var newHeight = 0;
+
+        answer.children().each(function () {
+            newHeight += $(this).outerHeight(true);
+        });
+
+        answer.animate({'height': newHeight}, 100);
+        answer.addClass('open');
+        history.replaceState(undefined, undefined, "#" + answer.parent().attr('id'));
+      }
+    }
+
+    // When the user clicks on a question, toggle its answer
+    $('.questions > li > span').click(function() {
+      toggleFaq($(this).parent().find('.answer'));
+    });
+
+    // Make anchor links work
+    var anchor = window.location.hash;
+    if (anchor) {
+        toggleFaq($(anchor + " > .answer"));
+    }
+    
+    </script>
+
+</body>
+
+</html>

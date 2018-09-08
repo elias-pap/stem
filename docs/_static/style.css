@@ -15,3 +15,42 @@ span.green {
     color: green;
     font-weight: bold;
 }
+
+.questions {
+  margin: 0px;
+  padding-left: 15px;
+  padding-bottom: 0px;
+}
+
+.questions > li {
+  margin: 0px;
+  padding: 0px 0px 5px 0px;
+  text-align: left;
+}
+
+.questions > li > span {
+  cursor: pointer;
+  color: #dc3c01;
+  font-weight: bold;
+}
+
+.answer {
+  height: 0px;
+  overflow: hidden;
+  padding: 0px;
+}
+
+.answer p {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.answer pre {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.answer ol {
+  margin-top: 20px;
+}
+
